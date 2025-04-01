@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aime Claudien Mazimpaka | Software Engineer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      /* Global Styles */
+      :root {
+        --primary-color: #2d3e50;
+        --secondary-color: #3498db;
+        --accent-color: #e74c3c;
+        --light-color: #ecf0f1;
+        --dark-color: #2c3e50;
+        --text-color: #333;
+        --text-light: #7f8c8d;
+        --border-radius: 8px;
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--light-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 28px;
+        background-color: var(--secondary-color);
+        color: white;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        border: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 14px;
+      }
+
+      .btn:hover {
+        background-color: #2980b9;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        border: 2px solid var(--secondary-color);
+        color: var(--secondary-color);
+      }
+
+      .btn-outline:hover {
+        background-color: var(--secondary-color);
+        color: white;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+        text-align: center;
+        position: relative;
+        color: var(--primary-color);
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--secondary-color);
+      }
+
+      section {
+        padding: 100px 0;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      /* Header & Navigation */
+      header {
+        background-color: var(--primary-color);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        transition: var(--transition);
+      }
+
+      .header-scrolled {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        background-color: rgba(45, 62, 80, 0.95);
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        color: white;
+        font-weight: 700;
+      }
+
+      .logo span {
+        color: var(--secondary-color);
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav-link {
+        color: white;
+        font-weight: 500;
+        position: relative;
+        transition: var(--transition);
+      }
+
+      .nav-link:after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--secondary-color);
+        transition: var(--transition);
+      }
+
+      .nav-link:hover {
+        color: var(--secondary-color);
+      }
+
+      .nav-link:hover:after {
+        width: 100%;
+      }
+
+      .hamburger {
+        display: none;
+        cursor: pointer;
+        color: white;
+        font-size: 1.5rem;
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        background: linear-gradient(
+          to right,
+          var(--primary-color),
+          var(--dark-color)
+        );
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url("./Screenshot_20200428-171930_Gallery.jpg") center/cover
+          no-repeat;
+        opacity: 0.1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        color: white;
+        max-width: 650px;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        color: var(--secondary-color);
+      }
+
+      .hero-text {
+        margin-bottom: 30px;
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 20px;
+      }
+
+      .hero-socials {
+        display: flex;
+        gap: 15px;
+        margin-top: 40px;
+      }
+
+      .social-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        transition: var(--transition);
+      }
+
+      .social-link:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-5px);
+      }
+
+      /* About Section */
+      .about {
+        background-color: white;
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .about-image {
+        overflow: hidden;
+        border-radius: var(--border-radius);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        transition: var(--transition);
+      }
+
+      .about-image:hover img {
+        transform: scale(1.05);
+      }
+
+      .about-text h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: var(--primary-color);
+      }
+
+      .about-text p {
+        margin-bottom: 20px;
+        color: var(--text-light);
+      }
+
+      .skills {
+        margin-top: 30px;
+      }
+
+      .skills h4 {
+        margin-bottom: 15px;
+        color: var(--primary-color);
+      }
+
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .skill-tag {
+        padding: 8px 16px;
+        background-color: var(--light-color);
+        border-radius: 30px;
+        font-size: 0.9rem;
+        transition: var(--transition);
+      }
+
+      .skill-tag:hover {
+        background-color: var(--secondary-color);
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      /* Services Section */
+      .services {
+        background-color: #f9f9f9;
+      }
+
+      .services-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .service-card {
+        background-color: white;
+        padding: 40px 30px;
+        border-radius: var(--border-radius);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .service-icon {
+        width: 70px;
+        height: 70px;
+        background-color: var(--light-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px;
+        color: var(--secondary-color);
+        font-size: 1.8rem;
+        transition: var(--transition);
+      }
+
+      .service-card:hover .service-icon {
+        background-color: var(--secondary-color);
+        color: white;
+      }
+
+      .service-title {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        color: var(--primary-color);
+      }
+
+      .service-description {
+        color: var(--text-light);
+      }
+
+      /* Projects Section */
+      .projects {
+        background-color: white;
+      }
+
+      .projects-filter {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        padding: 8px 20px;
+        background-color: var(--light-color);
+        border-radius: 30px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .filter-btn.active,
+      .filter-btn:hover {
+        background-color: var(--secondary-color);
+        color: white;
+      }
+
+      .projects-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+      }
+
+      .project-card {
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      .project-image {
+        height: 250px;
+        overflow: hidden;
+      }
+
+      .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .project-card:hover .project-image img {
+        transform: scale(1.1);
+      }
+
+      .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(52, 152, 219, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: var(--transition);
+        padding: 20px;
+      }
+
+      .project-card:hover .project-overlay {
+        opacity: 1;
+      }
+
+      .project-title {
+        color: white;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .project-category {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 20px;
+        font-style: italic;
+        text-align: center;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .project-link {
+        width: 45px;
+        height: 45px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--secondary-color);
+        transition: var(--transition);
+      }
+
+      .project-link:hover {
+        background-color: var(--primary-color);
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      .project-info {
+        padding: 20px;
+        background-color: white;
+      }
+
+      .project-description {
+        color: var(--text-light);
+        margin-top: 10px;
+      }
+
+      /* Experience Section */
+      .experience {
+        background-color: #f9f9f9;
+      }
+
+      .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .timeline:before {
+        content: "";
+        position: absolute;
+        width: 3px;
+        background-color: var(--secondary-color);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .timeline-item {
+        padding: 20px 0;
+        position: relative;
+        width: 50%;
+        transition: var(--transition);
+      }
+
+      .timeline-item:nth-child(odd) {
+        left: 0;
+        padding-right: 50px;
+        text-align: right;
+      }
+
+      .timeline-item:nth-child(even) {
+        left: 50%;
+        padding-left: 50px;
+      }
+
+      .timeline-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .timeline-content {
+        background-color: white;
+        padding: 30px;
+        border-radius: var(--border-radius);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .timeline-date {
+        display: inline-block;
+        padding: 5px 15px;
+        background-color: var(--secondary-color);
+        color: white;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+      }
+
+      .timeline-title {
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+        color: var(--primary-color);
+      }
+
+      .timeline-location {
+        margin-bottom: 15px;
+        color: var(--text-light);
+        font-style: italic;
+      }
+
+      .timeline-description {
+        color: var(--text-light);
+      }
+
+      .timeline-dot {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: var(--secondary-color);
+        border-radius: 50%;
+        top: 30px;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-dot {
+        right: -10px;
+      }
+
+      .timeline-item:nth-child(even) .timeline-dot {
+        left: -10px;
+      }
+
+      /* Education Section */
+      .education {
+        background-color: white;
+      }
+
+      .education-card {
+        background-color: var(--light-color);
+        padding: 30px;
+        border-radius: var(--border-radius);
+        margin-bottom: 30px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+      }
+
+      .education-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .education-period {
+        display: inline-block;
+        padding: 5px 15px;
+        background-color: var(--secondary-color);
+        color: white;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+      }
+
+      .education-title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+      }
+
+      .education-institution {
+        margin-bottom: 15px;
+        color: var(--text-light);
+        font-style: italic;
+      }
+
+      .education-description {
+        color: var(--text-light);
+      }
+
+      /* Contact Section */
+      .contact {
+        background-color: #f9f9f9;
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .contact-info h3 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        color: var(--primary-color);
+      }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+      .contact-item-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        background-color: var(--light-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        color: var(--secondary-color);
+        font-size: 1.2rem;
+        transition: var(--transition);
+      }
+
+      .contact-item:hover .contact-icon {
+        background-color: var(--secondary-color);
+        color: white;
+      }
+
+      .contact-details h4 {
+        margin-bottom: 5px;
+        color: var(--primary-color);
+      }
+
+      .contact-details p {
+        color: var(--text-light);
+      }
+
+      .contact-form h3 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        color: var(--primary-color);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: var(--border-radius);
+        background-color: white;
+        transition: var(--transition);
+      }
+
+      .form-control:focus {
+        border-color: var(--secondary-color);
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      /* Footer Section */
+      footer {
+        background-color: var(--primary-color);
+        padding: 30px 0;
+        color: white;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .footer-logo span {
+        color: var(--secondary-color);
+      }
+
+      .footer-socials {
+        display: flex;
+        gap: 15px;
+      }
+
+      .footer-copyright {
+        text-align: center;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Go To Top Button */
+      .go-top {
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--secondary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 999;
+      }
+
+      .go-top.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .go-top:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-5px);
+      }
+
+      /* Animation Classes */
+      .fade-in {
+        animation: fadeIn 1s ease forwards;
+      }
+
+      .slide-up {
+        animation: slideUp 1s ease forwards;
+      }
+
+      .slide-right {
+        animation: slideRight 1s ease forwards;
+      }
+
+      .slide-left {
+        animation: slideLeft 1s ease forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideRight {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideLeft {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .about-content,
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+
+        .about-image {
+          order: -1;
+        }
+
+        .timeline:before {
+          left: 31px;
+        }
+
+        .timeline-item {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 0;
+          left: 0;
+          text-align: left;
+        }
+
+        .timeline-item:nth-child(odd) {
+          padding-right: 0;
+          text-align: left;
+        }
+
+        .timeline-item:nth-child(even) {
+          left: 0;
+        }
+
+        .timeline-dot {
+          left: 21px !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .contact-item-grid {
+          grid-template-columns: 1fr;
+        }
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.3rem;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .nav-menu {
+          position: fixed;
+          top: 90px;
+          right: -100%;
+          flex-direction: column;
+          gap: 0;
+          background-color: var(--primary-color);
+          width: 70%;
+          height: calc(100vh - 90px);
+          transition: var(--transition);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+          padding: 30px 0;
+          align-items: center;
+        }
+
+        .nav-menu.active {
+          right: 0;
+        }
+
+        .nav-link {
+          padding: 15px 0;
+          width: 100%;
+          text-align: center;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+          gap: 15px;
+          align-items: flex-start;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .projects-container {
+          grid-template-columns: 1fr;
+        }
+
+        .services-container {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-content {
+          padding: 0 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="container">
+        <nav class="navbar">
+          <a href="#home" class="logo">Aime<span>Col</span></a>
+          <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </div>
+          <ul class="nav-menu" id="nav-menu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content slide-right">
+          <h1 class="hero-title">Aime Claudien Mazimpaka</h1>
+          <h3 class="hero-subtitle">Software Engineer</h3>
+          <p class="hero-text">
+            Dedicated and detail-oriented Software Engineering student with
+            strong expertise in front-end and back-end development. Passionate
+            about leveraging technology to create innovative and efficient
+            solutions.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn">View Work</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://github.com/Aimecol" class="social-link">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://gitlab.com/aimecol314" class="social-link">
+              <i class="fab fa-gitlab"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/aime-claudien-mazimpaka-61801b356"
+              class="social-link"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:aimecol314@gmail.com" class="social-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-text slide-right">
+            <h3>I'm Aime, a Software Engineer based in Kigali, Rwanda</h3>
+            <p>
+              I am a dedicated and detail-oriented Software Engineering student
+              with strong expertise in front-end and back-end development. I'm
+              passionate about creating innovative and efficient solutions to
+              real-world problems.
+            </p>
+            <p>
+              Currently pursuing my Bachelor's degree in Software Engineering at
+              Ines Ruhengeri University, expected to graduate in September 2025.
+              I have experience in various programming languages and frameworks,
+              and I've worked on multiple projects including e-commerce systems,
+              business portfolios, and student management systems.
+            </p>
+            <div class="skills">
+              <h4>Technical Skills</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">React.js</span>
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">Bootstrap</span>
+                <span class="skill-tag">Tailwind CSS</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">SQLite</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">Next.js</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Git</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-image slide-left">
+            <img
+              src="./Screenshot_20220920-150313.png"
+              alt="Aime Claudien Mazimpaka"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="section-title">My Services</h2>
+        <div class="services-container">
+          <div class="service-card slide-up">
+            <div class="service-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="service-title">Web Development</h3>
+            <p class="service-description">
+              Building responsive, user-friendly websites using modern
+              frameworks and technologies. From simple landing pages to complex
+              web applications.
+            </p>
+          </div>
+          <div class="service-card slide-up">
+            <div class="service-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3 class="service-title">Responsive Design</h3>
+            <p class="service-description">
+              Creating websites that look and function perfectly on all devices,
+              from desktop computers to mobile phones.
+            </p>
+          </div>
+          <div class="service-card slide-up">
+            <div class="service-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3 class="service-title">Backend Development</h3>
+            <p class="service-description">
+              Developing robust server-side applications, APIs, and database
+              solutions to power your web applications.
+            </p>
+          </div>
+          <div class="service-card slide-up">
+            <div class="service-icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h3 class="service-title">E-commerce Solutions</h3>
+            <p class="service-description">
+              Building online stores with secure payment integration and
+              user-friendly interfaces to enhance the shopping experience.
+            </p>
+          </div>
+          <div class="service-card slide-up">
+            <div class="service-icon">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <h3 class="service-title">System Development</h3>
+            <p class="service-description">
+              Creating custom business management systems tailored to your
+              specific needs and requirements.
+            </p>
+          </div>
+          <div class="service-card slide-up">
+            <div class="service-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3 class="service-title">Freelance Development</h3>
+            <p class="service-description">
+              Providing freelance development services for various project
+              types, from small business websites to complex applications.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+      <div class="container">
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-filter">
+          <div class="filter-btn active" data-filter="all">All</div>
+          <div class="filter-btn" data-filter="web">Web Development</div>
+          <div class="filter-btn" data-filter="system">System Development</div>
+          <div class="filter-btn" data-filter="freelance">Freelance</div>
+        </div>
+        <div class="projects-container">
+          <div class="project-card fade-in" data-category="web">
+            <div class="project-image">
+              <img src="./ikigugu.png" alt="Business Portfolio" />
+            </div>
+            <div class="project-overlay">
+              <h3 class="project-title">Ikigugu Group Ltd Portfolio</h3>
+              <p class="project-category">Web Development</p>
+              <div class="project-links">
+                <a
+                  href="https://ikigugugroup.rw/"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fas fa-eye"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="service-title">Ikigugu Group Ltd Portfolio</h3>
+              <p class="project-description">
+                Created a professional portfolio website to showcase businesses,
+                services, and projects, with responsive design.
+              </p>
+            </div>
+          </div>
+          <div class="project-card fade-in" data-category="web">
+            <div class="project-image">
+              <img src="./virungaHomestay.png" alt="Virunga Homestay" />
+            </div>
+            <div class="project-overlay">
+              <h3 class="project-title">Virunga Homestay</h3>
+              <p class="project-category">Web Development</p>
+              <div class="project-links">
+                <a
+                  href="https://virungahomestay.com/"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fas fa-eye"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="service-title">Virunga Homestay</h3>
+              <p class="project-description">
+                Website for a homestay business showcasing accommodations,
+                services, and booking information.
+              </p>
+            </div>
+          </div>
+          <div class="project-card fade-in" data-category="web">
+            <div class="project-image">
+              <img src="./virungaEcotours.png" alt="Virunga ecotours" />
+            </div>
+            <div class="project-overlay">
+              <h3 class="project-title">Virunga ecotours</h3>
+              <p class="project-category">Web Development</p>
+              <div class="project-links">
+                <a
+                  href="https://www.virungaecotours.com/"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fas fa-eye"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="service-title">Virunga ecotours</h3>
+              <p class="project-description">
+                Website for a tourism business showcasing destinations, services,
+                and booking information.
+              </p>
+            </div>
+          </div>
+          <div class="project-card fade-in" data-category="system">
+            <div class="project-image">
+              <img
+                src="./studentManagementSystem.png"
+                alt="Student Management System"
+              />
+            </div>
+            <div class="project-overlay">
+              <h3 class="project-title">Student Management System</h3>
+              <p class="project-category">System Development</p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Aimecol/Student-Management-System.git"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="service-title">Student Management System</h3>
+              <p class="project-description">
+                Windows application for managing student data, courses, and
+                academic records efficiently.
+              </p>
+            </div>
+          </div>
+          <div class="project-card fade-in" data-category="web">
+            <div class="project-image">
+              <img src="./ecommerce.png" alt="E-commerce System" />
+            </div>
+            <div class="project-overlay">
+              <h3 class="project-title">E-commerce System</h3>
+              <p class="project-category">Web Development</p>
+              <div class="project-links">
+                <a href="https://aimecol.github.io/ecommerce/" class="project-link">
+                  <i class="fas fa-eye"></i>
+                </a>
+                <a href="https://github.com/Aimecol/ecommerce" target="_blank" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="service-title">E-commerce System</h3>
+              <p class="project-description">
+                Designed and implemented an online shopping platform with
+                product management and secure payment integration.
+              </p>
+            </div>
+          </div>
+          <div class="project-card fade-in" data-category="web">
+            <div class="project-image">
+              <img src="./eLearning.png" alt="E-learning System" />
+            </div>
+            <div class="project-overlay">
+              <h3 class="project-title">E-learning System</h3>
+              <p class="project-category">Web Development</p>
+              <div class="project-links">
+                <a
+                  href="https://aimecol.github.io/E-learnPro/"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fas fa-eye"></i>
+                </a>
+                <a
+                  href="https://github.com/Aimecol/E-learnPro"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="service-title">E-learning System</h3>
+              <p class="project-description">
+                Online learning platform with course management, student
+                progress tracking, and interactive learning tools.
+              </p>
+            </div>
+          </div>
+          <div class="project-card fade-in" data-category="web">
+            <div class="project-image">
+              <img src="./estate.png" alt="Estate System" />
+            </div>
+            <div class="project-overlay">
+              <h3 class="project-title">Estate System</h3>
+              <p class="project-category">Web Development</p>
+              <div class="project-links">
+                <a
+                  href="https://aimecol.github.io/Estate/RealEastatePro/"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fas fa-eye"></i>
+                </a>
+                <a
+                  href="https://github.com/Aimecol/Estate"
+                  class="project-link"
+                  target="_blank"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="service-title">Estate System</h3>
+              <p class="project-description">
+                Real estate listing and management system with property search
+                and inquiry features.
+              </p>
+            </div>
+          </div>
+          <div class="project-card fade-in" data-category="freelance">
+            <div class="project-image">
+              <img src="./lost&found.png" alt="Lost and Found System" />
+            </div>
+            <div class="project-overlay">
+              <h3 class="project-title">Lost and Found System</h3>
+              <p class="project-category">Freelance Project</p>
+            </div>
+            <div class="project-info">
+              <h3 class="service-title">Lost and Found System</h3>
+              <p class="project-description">
+                System for users to report lost items and search for found items
+                with ownership verification mechanism.
+              </p>
+            </div>
+          </div>
+          <div class="project-card fade-in" data-category="freelance">
+            <div class="project-image">
+              <img src="./tickets.png" alt="Buy Ticket System" />
+            </div>
+            <div class="project-overlay">
+              <h3 class="project-title">Buy Ticket System</h3>
+              <p class="project-category">Freelance Project</p>
+            </div>
+            <div class="project-info">
+              <h3 class="service-title">Buy Ticket System</h3>
+              <p class="project-description">
+                Online ticket booking platform where users can select events,
+                book seats, and make payments securely.
+              </p>
+            </div>
+          </div>
+          <div class="project-card fade-in" data-category="system">
+            <div class="project-image">
+              <img src="./votingsystem.png" alt="Voting System" />
+            </div>
+            <div class="project-overlay">
+              <h3 class="project-title">Voting System</h3>
+              <p class="project-category">System Development</p>
+              <div class="project-links">
+                <a href="https://aimecol.github.io/VotingSystem/" class="project-link">
+                  <i class="fas fa-eye"></i>
+                </a>
+                <a href="https://github.com/Aimecol/VotingSystem" target="_blank" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="service-title">Voting System</h3>
+              <p class="project-description">
+                Online voting system with reliable authentication, ensuring
+                transparency and security in elections.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+      <div class="container">
+        <h2 class="section-title">My Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item slide-right">
+            <div class="timeline-content">
+              <span class="timeline-date">2024 - now</span>
+              <h3 class="timeline-title">Freelance & Academic Projects</h3>
+              <p class="timeline-location">Kigali, Rwanda</p>
+              <p class="timeline-description">
+                Worked on various freelance software development projects,
+                including Lost and Found System and Buy Ticket System. Designed
+                and developed customized solutions for business and academic
+                needs. Currently working on an Advanced Blood donation system.
+              </p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-item slide-left">
+            <div class="timeline-content">
+              <span class="timeline-date">2021 - 2022</span>
+              <h3 class="timeline-title">Service Provider</h3>
+              <p class="timeline-location">PEDA Ltd, Kayonza-Kabarondo</p>
+              <p class="timeline-description">
+                Continued providing Rwandan e-services, clothing printing, bank, mobile,
+                and Irembo services. Managed printing services including papers,
+                PVC cards, and banners. Offered RRA and RDB services to clients.
+              </p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-item slide-right">
+            <div class="timeline-content">
+              <span class="timeline-date">2020 - 2021</span>
+              <h3 class="timeline-title">Owner</h3>
+              <p class="timeline-location">
+                Hardware Store, Kigali-Kinamba-Gakinjiro
+              </p>
+              <p class="timeline-description">
+                Provided Hardware Store services including e-services, financial services, and printing
+                solutions. Assisted in streamlining operational workflows for
+                business services as manager.
+              </p>
+            </div>
+            <div class="timeline-dot"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+      <div class="container">
+        <h2 class="section-title">My Education</h2>
+        <div class="education-card slide-up">
+          <span class="education-period">Expected Sep 2025</span>
+          <h3 class="education-title">
+            Bachelor's Degree in Software Engineering
+          </h3>
+          <p class="education-institution">Ines Ruhengeri University</p>
+          <p class="education-description">
+            Pursuing a comprehensive education in software engineering, focusing
+            on programming fundamentals, database management, web development,
+            and software design principles.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-container">
+          <div class="contact-info slide-right">
+            <h3>Get In Touch</h3>
+            <p>
+              If you have any questions or would like to discuss a project, feel
+              free to reach out to me through the contact information below.
+            </p>
+            <p>
+              I'm always open to new opportunities and collaborations. Let's
+              connect!
+            </p>
+            <div class="contact-item-grid">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Name</h4>
+                  <p>Aime Claudien Mazimpaka</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Location</h4>
+                  <p>Kigali, Rwanda</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Email</h4>
+                  <p>aimecol314@gmail.com</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Phone</h4>
+                  <p>+250 789 375 245</p>
+                </div>
+              </div>
+              <!-- <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-globe"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Website</h4>
+                  <p>www.aimemazimpaka.com</p>
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <!-- <div class="contact-form slide-left">
+            <h3>Send Message</h3>
+            <form id="contactForm" action="#" method="POST">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Subject"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">Aime<span>Col</span></div>
+          <div class="footer-socials">
+            <a href="https://github.com/Aimecol" class="social-link">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://gitlab.com/aimecol314" class="social-link">
+              <i class="fab fa-gitlab"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/aime-claudien-mazimpaka-61801b356"
+              class="social-link"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:aimecol314@gmail.com" class="social-link">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <p>&copy; 2025 Aime Claudien Mazimpaka. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Go To Top -->
+    <div class="go-top" id="goTop">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // DOM Elements
+      const header = document.getElementById("header");
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+      const navLinks = document.querySelectorAll(".nav-link");
+      const goTop = document.getElementById("goTop");
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const projects = document.querySelectorAll(".project-card");
+      //   const contactForm = document.getElementById("contactForm");
+
+      // Hamburger Menu Toggle
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        hamburger.innerHTML = navMenu.classList.contains("active")
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-bars"></i>';
+      });
+
+      // Close menu when clicking on a nav link
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+          hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+      });
+
+      // Scroll Event - Header Shadow & Go Top Button
+      window.addEventListener("scroll", () => {
+        // Header scroll class
+        if (window.scrollY > 50) {
+          header.classList.add("header-scrolled");
+        } else {
+          header.classList.remove("header-scrolled");
+        }
+
+        // Go to top button visibility
+        if (window.scrollY > 500) {
+          goTop.classList.add("active");
+        } else {
+          goTop.classList.remove("active");
+        }
+
+        // Reveal elements on scroll
+        revealElements();
+      });
+
+      // Go to top functionality
+      goTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Project Filtering
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active class from all buttons
+          filterBtns.forEach((btn) => btn.classList.remove("active"));
+
+          // Add active class to clicked button
+          btn.classList.add("active");
+
+          // Get filter value
+          const filter = btn.getAttribute("data-filter");
+
+          // Filter projects
+          projects.forEach((project) => {
+            if (
+              filter === "all" ||
+              project.getAttribute("data-category") === filter
+            ) {
+              project.style.display = "block";
+            } else {
+              project.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // Form submission (prevent default for demo)
+      //   document
+      //     .getElementById("contactForm")
+      //     .addEventListener("submit", async function (e) {
+      //       e.preventDefault();
+
+      //       const formData = {
+      //         name: this.elements[0].value,
+      //         email: this.elements[1].value,
+      //         subject: this.elements[2].value,
+      //         message: this.elements[3].value,
+      //       };
+
+      //       try {
+      //         const response = await fetch("http://localhost:5000/send-email", {
+      //           method: "POST",
+      //           headers: { "Content-Type": "application/json" },
+      //           body: JSON.stringify(formData),
+      //         });
+
+      //         const result = await response.json();
+      //         alert(result.message);
+      //         this.reset();
+      //       } catch (error) {
+      //         alert("Error sending message. Please try again.");
+      //       }
+      //     });
+
+      // Reveal elements on scroll with animation
+      function revealElements() {
+        const windowHeight = window.innerHeight;
+        const revealPoint = 150;
+
+        // Fade in elements
+        document.querySelectorAll(".fade-in").forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+          if (elementTop < windowHeight - revealPoint) {
+            element.style.opacity = 1;
+            element.style.transform = "translateY(0)";
+          }
+        });
+
+        // Slide up elements
+        document.querySelectorAll(".slide-up").forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+          if (elementTop < windowHeight - revealPoint) {
+            element.style.opacity = 1;
+            element.style.transform = "translateY(0)";
+          }
+        });
+
+        // Slide right elements
+        document.querySelectorAll(".slide-right").forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+          if (elementTop < windowHeight - revealPoint) {
+            element.style.opacity = 1;
+            element.style.transform = "translateX(0)";
+          }
+        });
+
+        // Slide left elements
+        document.querySelectorAll(".slide-left").forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+          if (elementTop < windowHeight - revealPoint) {
+            element.style.opacity = 1;
+            element.style.transform = "translateX(0)";
+          }
+        });
+      }
+
+      // Initialize reveal on load
+      window.addEventListener("load", () => {
+        revealElements();
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const headerHeight = header.offsetHeight;
+            const targetPosition =
+              targetElement.getBoundingClientRect().top +
+              window.pageYOffset -
+              headerHeight;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
